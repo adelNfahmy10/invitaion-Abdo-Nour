@@ -17,6 +17,89 @@ $mainColor : #2D5C60;
   }
 }
 
+/* الستارة */
+.open-slider {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 9999;
+  pointer-events: none;
+
+  /* الستارة */
+  &::before, &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(
+      135deg,
+      #fef6e4,
+      #f8d7da,
+      #d4af37,
+      #fef6e4
+    );
+
+    animation: openCurtain 1.8s ease-in-out 1s forwards;
+  }
+
+  /* النص على الستارة */
+  &::before {
+    --dir: -100%;
+    left: 0;
+    content: "You're";
+    color: $mainColor;
+    font-size: 38px;
+    font-weight: 600;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  &::after {
+    --dir: 100%;
+    right: 0;
+    content: "Invited";
+    color: #ff4d6d;
+    font-size: 38px;
+    font-weight: 600;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+}
+
+/* فتح الستارة */
+@keyframes openCurtain {
+  to {
+    transform: translateX(var(--dir));
+  }
+}
+
+@keyframes openLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes openRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
 // ########################### Heart Seciton ###########################
 .hearts-bg {
   position: fixed;
@@ -77,4 +160,10 @@ $mainColor : #2D5C60;
     transform: translate3d(0, -110vh, 0) rotate(360deg);
     opacity: 0;
   }
+}
+
+audio{
+  position: absolute;
+  left: -100%;
+  opacity: 0;
 }
