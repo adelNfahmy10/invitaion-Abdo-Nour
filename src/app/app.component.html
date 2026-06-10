@@ -18,7 +18,10 @@
     <app-footer></app-footer>
   </div>
 
-  <audio src="assets/audio/song.mp3" autoplay loop></audio>
+
+  <audio controls autoplay>
+    <source src="assets/audio/song.mp3" type="audio/mpeg">
+  </audio>
 
   <a (click)="scrollToTop()" [ngClass]="{'d-block': showArrow,'d-none': !showArrow}" class="arrowup cr"><i class="fa-solid fa-chevron-up"></i></a>
 </section>
