@@ -1,23 +1,16 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, NgClass } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { NgwWowService } from 'ngx-wow';
-import { NavbarComponent } from "./navbar/navbar.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
-import { WhyChooseUsComponent } from "./why-choose-us/why-choose-us.component";
-import { FeatureComponent } from "./feature/feature.component";
 import { FooterComponent } from "./footer/footer.component";
-import { HowItWorkComponent } from "./how-it-work/how-it-work.component";
-import { EventTypesComponent } from "./event-types/event-types.component";
-import { FaqComponent } from "./faq/faq.component";
-import { PricingComponent } from "./pricing/pricing.component";
-import { ContactUsComponent } from "./contact-us/contact-us.component";
+import { LocationComponent } from "./location/location.component";
+import { DateComponent } from "./date/date.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgClass, NavbarComponent, HomeComponent, AboutComponent, WhyChooseUsComponent, FeatureComponent, FooterComponent, HowItWorkComponent, EventTypesComponent, FaqComponent, PricingComponent, ContactUsComponent],
+  imports: [NgClass, HomeComponent, AboutComponent, FooterComponent, LocationComponent, DateComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -30,6 +23,7 @@ export class AppComponent {
     if (isPlatformBrowser(this._PLATFORM_ID)) {
       this._NgwWowService.init()
     }
+    this.generateHearts();
   }
 
   showArrow:boolean = false
@@ -44,5 +38,17 @@ export class AppComponent {
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+
+  hearts: any[] = [];
+
+  generateHearts() {
+    this.hearts = Array.from({ length: 40 }).map(() => ({
+      left: Math.random() * 100,
+      duration: 8 + Math.random() * 10,
+      delay: Math.random() * 10,
+      size: 6 + Math.random() * 14,
+    }));
   }
 }

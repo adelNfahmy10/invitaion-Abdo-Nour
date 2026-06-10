@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [TranslatePipe],
+  imports: [],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
@@ -20,8 +19,6 @@ export class FooterComponent {
     { id: 'pricing', name: 'navbar.pricing' },
     { id: 'faq', name: 'navbar.faq' },
     { id: 'contact-us', name: 'navbar.contact-us' },
-      // { id: 'our-work', name: 'footer.Links.list.ourWork' },
-      // { id: 'partners', name: 'footer.Links.list.partners' },
   ];
 
   scrollToSection(sectionId: string) {

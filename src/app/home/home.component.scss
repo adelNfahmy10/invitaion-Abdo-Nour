@@ -1,45 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-$mainColor : #598AF0;
-$second-color:#B245C2;
-.home{
-  background: url('/assets/image/home-image/home-bg.svg');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  .home-content{
-    position: relative;
-    z-index: 10;
-    h1{
-      text-transform: capitalize;
-    }
-    p{
-      color: #7e7e7e;
-    }
+// ########################### Home Section ###########################
+.home-banner {
+  font-family: "Caveat", cursive;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 40px #ccc;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #fff1f5,
+    #fef6e4,
+    #e8f9ff,
+    #f7f7ff
+  );
+
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* 🌌 Background GIF */
+.bg-home {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  z-index: 0;
+  opacity: 0.35; /* مهم عشان يبقى soft */
+  pointer-events: none;
+}
+
+/* 💌 Main content */
+.envolpe-image {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  img{
+    transition: all .4s ease;
+    animation: imageAnimation 3s ease-in-out infinite;
   }
 
-  .event-wow-img{
-    width: 200px;
+  .open-text {
     position: absolute;
-    position: 8;
-    &.event-1{
-      right: 30px;
-      bottom: 30px;
-    }
-    &.event-2{
-      top: 80px;
-      left: 30px;
-    }
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+
+    opacity: 0;
+    filter: blur(4px);
+
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #fef6e4, #ff8fa3);
+
+    border-radius: 50px;
+
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.3);
+
+    transition: all 0.5s ease;
+
+    animation: textAnimation 3s ease-in-out infinite;
+
+  }
+
+}
+
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
-@media (max-width:567px) {
-  .home-content{
-    width: 100% !important;
+
+
+@keyframes imageAnimation {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
   }
-  .event-wow-img{
-    width: 150px !important;
-    &.event-2{
-      width: 200px !important;
-    }
+
+  50% {
+    transform: scale(1.08) rotate(-3deg);
+    filter: brightness(0.9);
+  }
+}
+
+@keyframes textAnimation {
+  0%,
+  30%,
+  100% {
+    opacity: 0;
+    transform:  translateX(-30px) translateY(30px);
+    filter: blur(5px);
+  }
+
+  50%,
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }

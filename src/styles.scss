@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-$mainColor: #598AF0;
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&display=swap');
+$mainColor: #2D5C60;
 html[dir="ltr"] {
   direction: ltr;
   text-align: left;
@@ -10,7 +10,7 @@ html[dir="rtl"] {
   text-align: right;
 }
 *{
-  font-family: "Raleway", sans-serif;
+  font-family: "Caveat", cursive;
 }
 .main-color{
   color:$mainColor

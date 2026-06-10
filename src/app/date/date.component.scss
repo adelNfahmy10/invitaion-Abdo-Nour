@@ -1,0 +1,93 @@
+// ########################### Date Seciton ###########################
+.date-section {
+  padding: 20px;
+  font-family: "Caveat", cursive;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient( 135deg, #ffffff, #fff3f7, #f3f8ff, #fff9e6 );
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 40px 40px #ccc;
+  border-radius: 50px;
+}
+
+
+.section-title {
+  font-size: 32px;
+  color: #2d5c60;
+  letter-spacing: 2px;
+}
+
+.sub-title{
+  color: #2d5c60;
+}
+
+.date-cards{
+  padding: 20px;
+  font-family: "Caveat", cursive;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient( 135deg, #ffffff, #fff3f7, #f3f8ff, #fff9e6 );
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 40px 40px #ccc;
+  border-radius: 50px;
+  .card {
+    border-radius: 50px;
+    box-shadow: 0 10px 10px #cccccc94;
+    background: linear-gradient( 135deg, #ffffff, #fff3f7, #f3f8ff, #fff9e6 );
+    transition: all .5s;
+    .card-icon {
+      background-color: #ff4d6e33;
+      width: fit-content;
+      text-align: center;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    span {
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #2d5c60;
+    }
+
+    &:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+  }
+
+}
+
+.count-card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255, 77, 109, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.3s ease;
+
+  h3 {
+    font-size: 28px;
+    color: #ff4d6d;
+    margin: 0;
+  }
+
+  span {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #777;
+    margin-top: 5px;
+  }
+
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  }
+}

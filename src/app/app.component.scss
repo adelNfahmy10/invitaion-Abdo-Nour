@@ -1,4 +1,4 @@
-$mainColor : #598AF0;
+$mainColor : #2D5C60;
 .arrowup{
   position: fixed;
   bottom: 20px;
@@ -14,5 +14,67 @@ $mainColor : #598AF0;
   i{
     position: relative;
     top: -3px;
+  }
+}
+
+// ########################### Heart Seciton ###########################
+.hearts-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+
+  /* 🔥 مهم لتقليل layout recalculation */
+  contain: layout paint;
+}
+
+.hearts-bg span {
+  position: absolute;
+  bottom: -20px;
+
+  background: #ff4d6d;
+  transform: rotate(45deg);
+
+  opacity: 0.6;
+
+  /* 🚀 performance boost */
+  will-change: transform;
+  transform: translateZ(0) rotate(45deg);
+
+  animation: floatUp linear infinite;
+}
+
+.hearts-bg span::before,
+.hearts-bg span::after {
+  content: "";
+  position: absolute;
+  background: #ff4d6d;
+  border-radius: 50%;
+}
+
+.hearts-bg span::before {
+  width: 100%;
+  height: 100%;
+  top: -50%;
+}
+
+.hearts-bg span::after {
+  width: 100%;
+  height: 100%;
+  left: -50%;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(0, -110vh, 0) rotate(360deg);
+    opacity: 0;
   }
 }

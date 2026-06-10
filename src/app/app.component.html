@@ -1,17 +1,36 @@
 <section class="overflow-hidden">
-  <app-navbar></app-navbar>
-  <app-home></app-home>
-  <app-about></app-about>
-  <app-why-choose-us></app-why-choose-us>
-  <app-feature></app-feature>
-  <app-how-it-work></app-how-it-work>
-  <app-event-types></app-event-types>
-  <app-pricing></app-pricing>
-  <app-faq></app-faq>
-  <app-contact-us></app-contact-us>
-  <!-- <app-our-work></app-our-work> -->
-  <!-- <app-partners></app-partners> -->
-  <app-footer></app-footer>
+  <div class="row g-5">
+    <div class="col-12">
+      <app-home></app-home>
+    </div>
+
+    <div class="col-md-6">
+      <app-about></app-about>
+    </div>
+
+    <div class="col-md-6">
+      <app-location></app-location>
+    </div>
+
+    <div class="col-12">
+      <app-date></app-date>
+    </div>
+    <app-footer></app-footer>
+  </div>
 
   <a (click)="scrollToTop()" [ngClass]="{'d-block': showArrow,'d-none': !showArrow}" class="arrowup cr"><i class="fa-solid fa-chevron-up"></i></a>
 </section>
+
+
+<div class="hearts-bg">
+  @for (h of hearts; track $index) {
+    <span
+      [style.left.%]="h.left"
+      [style.animation-duration.s]="h.duration"
+      [style.animation-delay.s]="h.delay"
+      [style.width.px]="h.size"
+      [style.height.px]="h.size"
+    ></span>
+  }
+</div>
+

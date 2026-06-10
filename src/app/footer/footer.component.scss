@@ -1,75 +1,21 @@
-$mainColor : #598AF0;
-$second-color:#B245C2;
+.footer {
+  padding: 30px 20px;
+  background-color: #2d5c6070;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #535353;
+    font-weight: 600;
+    margin: 0;
 
-footer{
-  background-size: cover;
-  background-position: center center;
-  p{
-    color: #797979;
-    font-size: 14px;
-  }
-  .logo{
-    img{
-      width:200px;
+    &::before,
+    &::after {
+      content: '✦';
+      margin: 0 10px;
+      color: #ff8fa3;
     }
-    h5{
-      font-weight: 600;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      letter-spacing: 5px;
-    }
-    span{
-      color: #797979;
-      letter-spacing: 5px;
-    }
-  }
-  li{
-    font-size: 14px;
-    color: #797979;
-  }
-  .footer-icons{
-    transition: all .3s;
-    .icon{
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      font-size: 20px;
-      background-color: $mainColor;
-      border-radius: 50%;
-      &:hover{
-        a{
-          transform: scale(1.2);
-        }
-      }
-    }
-  }
-  .footer-links{
-    a:hover{
-      color: $mainColor !important;
-    }
-  }
-  .footer-contact{
-    i{
-      font-size: 20px;
-      transition: all .3s;
-      color: #797979;
-    }
-    a{
-      font-size: 18px;
-      &:hover{
-        i{
-          color: $mainColor;
-        }
-        color: $mainColor !important;
-      }
-    }
-  }
-  .copy-right{
-    background-color: $mainColor;
-  }
-  .fa-location-dot{
-    color: $mainColor;
   }
 }

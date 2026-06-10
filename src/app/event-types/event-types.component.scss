@@ -1,9 +1,0 @@
-$mainColor: #598AF0;
-$secondColor: #B245C2;
-
-i {
-  background: linear-gradient(45deg, $mainColor, $secondColor);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}

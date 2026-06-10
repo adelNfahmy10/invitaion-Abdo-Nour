@@ -1,73 +1,90 @@
-$mainColor : #598AF0;
-$second-color:#B245C2;
-.about{
+// ########################### About Seciton ###########################
+.about {
+  font-family: "Caveat", cursive;
   position: relative;
-  .bullet-bg{
+  overflow: hidden;
+  background: linear-gradient( 135deg, #ffffff, #fff3f7, #f3f8ff, #fff9e6 );
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 40px 40px #ccc;
+  border-radius: 50px;
+
+  .wedding-name{
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 0.3;
-    animation: bulletFloat 16s ease-in-out infinite;
-  }
-  .about-img{
-    text-align: center;
-    img{
-      width:80%;
-      margin: 0 auto;
-      border-top-right-radius: 20%;
-      border-bottom-left-radius: 20%;
-      // filter: drop-shadow(0px 0px 10px rgba(89, 137, 240, 0.801));
-    }
-  }
-  .about-info{
-    .about-title{
-      border: 1px solid $mainColor;
-      width: fit-content;
-      .line{
-        width: 20px;
-        height: 8px;
-        margin-top: 12px;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%) rotate(2deg);
+    color: #2D5C60;
+
+    .sub-title{
+      line-height: 20px;
+      position: relative;
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        width: 42%;
+        height: 2px;
+        background-color: #2d5c607b;
       }
-      h3{
-        font-size: 24px;
+
+      &::before{
+        left: 0;
+      }
+
+      &::after{
+        right: 0;
       }
     }
 
-    .about-content{
-      p{
-        color: #797979;
+    .center-heart-top{
+      position: relative;
+      top: -18px;
+    }
+
+    .center-heart-bottom{
+      position: relative;
+      bottom: -18px;
+    }
+
+    .name{
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 30px;
+      font-style: italic;
+    }
+
+    .and{
+      font-size: 30px;
+    }
+
+    .sub-content{
+      position: relative;
+      font-size: 14px;
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        top: -10px;
+        width: 42%;
+        height: 2px;
+        background-color: #2d5c607b;
+      }
+
+      &::before{
+        left: 0;
+      }
+
+      &::after{
+        right: 0;
+      }
+    }
+
+    .date{
+      font-size: 12px;
+      a{
+        color: inherit;
+        text-decoration: none;
       }
     }
   }
-}
-
-
-@keyframes bulletFloat {
-
-  0%{
-    transform: scale(1) rotate(0deg);
-    filter: drop-shadow(0 0 0 rgba(0,0,0,0));
-  }
-
-  25%{
-    transform: scale(1.15) rotate(45deg);
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
-  }
-
-  50%{
-    transform: scale(0.9) rotate(90deg);
-    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.2));
-  }
-
-  75%{
-    transform: scale(1.1) rotate(135deg);
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
-  }
-
-  100%{
-    transform: scale(1) rotate(180deg);
-    filter: drop-shadow(0 0 0 rgba(0,0,0,0));
-  }
-
 }

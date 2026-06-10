@@ -1,25 +1,15 @@
-<section class="home overflow-hidden" id="home">
-  <div class="container d-flex justify-content-center align-items-center h-100">
-    <div class="home-content text-center">
-      <h1 class="animate__animated animate__fadeInDown animate__slow">{{'hero.title' | translate}}</h1>
-      <p class="mt-3 animate__animated animate__fadeInUp animate__slow">{{'hero.subtitle' | translate}}</p>
-      <div class="d-flex justify-content-center align-items-center gap-2 mt-3">
-        <button class="btn main-btn animate__animated animate__fadeInRight animate__slow">
-          <a class="text-white"
-            href="https://www.ticketateg.com/"
-            target="_blank">
-            {{ 'hero.startNow' | translate }}
-          </a>
-        </button>
-        <button class="btn second-btn animate__animated animate__fadeInLeft animate__slow">
-          <a (click)="scrollToSection('about')">
-            {{ 'hero.learnMore' | translate }}
-          </a>
-        </button>
-      </div>
-    </div>
+ <section class="home">
+    <div class="home-banner d-flex justify-content-center align-items-center vh-100 text-center">
 
-    <img class="event-wow-img event-1 wow animate__animated animate__jackInTheBox animate__slow" src="assets/image/home-image/event-1.png" alt="events">
-    <img class="event-wow-img event-2 wow animate__animated animate__rotateIn animate__slow" src="assets/image/home-image/event-2.png" alt="events">
-  </div>
-</section>
+      <img class="bg-home animate__animated animate__fadeIn animate__slow" src="assets/image/home-image/frame-image.gif" alt="bg-wedding-invite">
+
+      <div class="envolpe-image animate__animated animate__rotateInDownRight animate__delay-1s">
+        <a (click)="scrollToSection('about')">
+          <img src="assets/image/home-image/envolpe.gif" alt="wedding-invite">
+
+          <span class="open-text">OPEN</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
