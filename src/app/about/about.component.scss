@@ -52,6 +52,7 @@
       font-weight: 700;
       line-height: 30px;
       font-style: italic;
+
     }
 
     .and{
@@ -87,4 +88,20 @@
       }
     }
   }
+}
+
+
+@media (max-width:567px) {
+  .name{
+    font-size: 32px !important;
+  }
+
+  .center-heart-top{
+    top: -3px !important;
+  }
+
+  .center-heart-bottom{
+    bottom: -3px !important;
+  }
+
 }
