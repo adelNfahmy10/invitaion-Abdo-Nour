@@ -17,87 +17,117 @@ $mainColor : #2D5C60;
   }
 }
 
-/* الستارة */
 .open-slider {
   position: fixed;
   inset: 0;
   overflow: hidden;
   z-index: 9999;
+
+  // مهم: نخليها تسمح بالضغط على OPEN فقط
   pointer-events: none;
 
-  /* الستارة */
-  &::before, &::after{
+  &::before,
+  &::after {
     content: "";
     position: absolute;
     top: 0;
     width: 50%;
     height: 100%;
-
-    background: linear-gradient(
-      135deg,
-      #fef6e4,
-      #f8d7da,
-      #d4af37,
-      #fef6e4
-    );
-
-    animation: openCurtain 1.8s ease-in-out 1s forwards;
+    background: linear-gradient(135deg, #fef6e4, #f8d7da, #d4af37, #fef6e4);
   }
 
-  /* النص على الستارة */
   &::before {
-    --dir: -100%;
     left: 0;
     content: "You're";
-    color: $mainColor;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding-top: 80px;
     font-size: 38px;
     font-weight: 600;
     font-style: italic;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #333;
     text-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
 
   &::after {
-    --dir: 100%;
     right: 0;
     content: "Invited";
-    color: #ff4d6d;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding-top: 80px;
     font-size: 38px;
     font-weight: 600;
     font-style: italic;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #ff4d6d;
     text-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
-}
 
-/* فتح الستارة */
-@keyframes openCurtain {
-  to {
-    transform: translateX(var(--dir));
+  /* لما تفتح الستارة */
+  &.open::before {
+    animation: openLeft 1.8s ease-in-out forwards;
   }
+
+  &.open::after {
+    animation: openRight 1.8s ease-in-out forwards;
+  }
+
+  .open-text {
+    pointer-events: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 18px;
+    font-weight: 900;
+
+    /* جمالي أكثر */
+    color: #fff;
+    text-transform: uppercase;
+
+    padding: 10px 30px;
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+
+    cursor: pointer;
+    z-index: 10;
+
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+
+    animation: glowPulse 1.8s infinite ease-in-out;
+  }
+
 }
 
+/* animations */
 @keyframes openLeft {
-  from {
-    transform: translateX(0);
-  }
-
   to {
     transform: translateX(-100%);
   }
 }
 
 @keyframes openRight {
-  from {
-    transform: translateX(0);
-  }
-
   to {
     transform: translateX(100%);
+  }
+}
+
+/* glow أنعم وأفخم */
+@keyframes glowPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
   }
 }
 // ########################### Heart Seciton ###########################

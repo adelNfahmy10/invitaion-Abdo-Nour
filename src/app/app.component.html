@@ -21,8 +21,14 @@
   <a (click)="scrollToTop()" [ngClass]="{'d-block': showArrow,'d-none': !showArrow}" class="arrowup cr"><i class="fa-solid fa-chevron-up"></i></a>
 </section>
 
-<div class="open-slider">
+<div class="open-slider" [class.open]="isOpen">
   <div class="shine"></div>
+
+  @if(!isOpen){
+    <div class="open-text" (click)="openCurtain()">
+      💍 OPEN 💍
+    </div>
+  }
 </div>
 
 <div class="hearts-bg">

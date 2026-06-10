@@ -23,10 +23,6 @@ export class AppComponent implements OnInit{
     if (isPlatformBrowser(this._PLATFORM_ID)) {
       this._NgwWowService.init();
     }
-
-    setTimeout(() => {
-      this.palySound()
-    }, 500);
   }
 
   showArrow:boolean = false
@@ -53,24 +49,21 @@ export class AppComponent implements OnInit{
     }));
   }
 
+  isOpen = false;
   audio!: HTMLAudioElement;
 
-  palySound() {
-    if (isPlatformBrowser(this._PLATFORM_ID)) {
-      this.audio = new Audio('assets/audio/song.mp3');
-      this.audio.loop = true;
+  openCurtain() {
+    this.audio = new Audio('assets/audio/song.mp3');
+    // إعادة الصوت للبداية
+    this.audio.currentTime = 0;
+    this.audio.volume = 1;
 
-      const start = () => {
-        this.audio.play().catch(console.error);
+    // تشغيل الصوت
+    this.audio.play().catch(err => {
+      console.log('Audio blocked:', err);
+    });
 
-        document.removeEventListener('click', start);
-        document.removeEventListener('touchstart', start);
-        document.removeEventListener('scroll', start);
-      };
-
-      document.addEventListener('click', start, { once: true });
-      document.addEventListener('touchstart', start, { once: true });
-      document.addEventListener('scroll', start, { once: true, passive: true });
-    }
+    // فتح الستارة
+    this.isOpen = true;
   }
 }
