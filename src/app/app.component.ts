@@ -23,6 +23,7 @@ export class AppComponent implements OnInit{
     if (isPlatformBrowser(this._PLATFORM_ID)) {
       this._NgwWowService.init();
     }
+    this.generateHearts()
   }
 
   showArrow:boolean = false
@@ -37,16 +38,6 @@ export class AppComponent implements OnInit{
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  hearts: any[] = [];
-  generateHearts() {
-    this.hearts = Array.from({ length: 40 }).map(() => ({
-      left: Math.random() * 100,
-      duration: 8 + Math.random() * 10,
-      delay: Math.random() * 10,
-      size: 6 + Math.random() * 14,
-    }));
   }
 
   isOpen = false;
@@ -66,4 +57,16 @@ export class AppComponent implements OnInit{
     // فتح الستارة
     this.isOpen = true;
   }
+
+  hearts: any[] = [];
+  generateHearts() {
+    this.hearts = Array.from({ length: 40 }).map(() => ({
+      left: Math.random() * 100,
+      duration: 8 + Math.random() * 10,
+      delay: Math.random() * 10,
+      size: 6 + Math.random() * 14,
+    }));
+  }
+
+
 }
